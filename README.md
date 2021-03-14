@@ -63,10 +63,10 @@ then use the same command to generate a second image or you can modify the file 
 to resume this process and build the images and containers in just one comand like this:
 
 * with images previously created:
-![](/img/local/build/image.png)
+> ![](/img/local/build/image.png)
 
 * to build images:
-![](/img/local/build/build.png)
+> ![](/img/local/build/build.png)
 
 after this configuration for running the image in a container using:
 ```
