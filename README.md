@@ -6,14 +6,14 @@ This project focuses on the mountage of a docker container that have 4 diferents
 
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/Elan-MarMEn/AREPNanoSaprk)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/6b9784449796496f86c63926d7cc6a14)](https://www.codacy.com/gh/Elan-MarMEn/AREPNanoSaprk/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Elan-MarMEn/AREPNanoSaprk&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/13b1c8c14c5f469ca46d1f3e492fb825)](https://www.codacy.com/gh/Elan-MarMEn/AREPlab5-DockerAws/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Elan-MarMEn/AREPlab5-DockerAws&amp;utm_campaign=Badge_Grade)
 
 ## Getting Started
 
 Open your comand console or cmd and write or copy the comand below.
 
 ```
-git clone 
+git clone https://github.com/Elan-MarMEn/AREPlab5-DockerAws.git
 ```
 
 ### Prerequisites
@@ -43,22 +43,13 @@ For get the javadoc use:
 mvn javadoc:javadoc
 ```
 
-Once you run the project you can use the URI´s below to access to all allowed(Existing) requests:
+Once you run the project you can use the URI´s below to access to all allowed(Existing) get requests:
 
-For static files:
 ```
-.../Arep/index.html
+.../dataset(Round_robin)
 
-.../Arep/styles.css
-
-.../Arep/app.js
-```
-
-For lambda functions:
-```
-.../Apps/customers
-```
-the rest of the request will be access to a default response. 
+.../datastore(Log_service)
+``` 
 
 ## Docker Local Running
 
@@ -71,27 +62,49 @@ docker build -t {NameOfImage} .
 then use the same command to generate a second image or you can modify the file docker-compose.yml 
 to resume this process and build the images and containers in just one comand like this:
 
-* with images:
+* with images previously created:
+![](/img/local/build/image.png)
 
 * to build images:
+![](/img/local/build/build.png)
 
-after this configuration for running the image in a container run:
+after this configuration for running the image in a container using:
 ```
 docker-compose up -d
 ```
 Now you can put in the URI " http://localhost:34005/ " and you will see this:
+* Normal view:
+![](/img/aws/normal.png)
+* If you click on the button "Show Info", you´ll see the store information like this:
+![](/img/aws/ingreso1.png)
+* Then you can add information using the input and the button "Save":
+![](/img/aws/ingreso2.png)
+* Once you clicked the button, click again on "Show info" to verify that your data was saved:
+![](/img/local/docker/data.png)
 
 ## AWS Running
 
 In this case the local image must be load in DockerHub and then you will pull them on 
-the virtual machine (Note: you should install docker and docker-compose on the AWS machine), then with 
-images you just have to create a new directory for create and store your docker-compose.yml. 
-Now you have tools just left to run the docker compose command:
+the virtual machine (Note: you should install docker and docker-compose on the AWS machine), you will see just two images:
+![](/img/aws/imagesAWs.png)
+ 
+then with images you just have to create a new directory for create and store your docker-compose.yml
+(The docker-compose.yml could be the same of this repository you only have to change the name of the image). 
+Now you have all tools just left to run the docker compose command:
 ```
 docker-compose up -d
 ```
+then verify the port of the containers and the succesfully creation:
+![](/img/aws/awsContainers.png)
 After this you can see on AWS web direction:
-
+* Normal view:
+![](/img/aws/awsnormal.png)
+* If you click on the button "Show Info", you´ll see the store information like this:
+![](/img/aws/awsFuncional.png)
+* Then you can add information using the input and the button "Save":
+![](/img/aws/awingreso.png)
+* Once you clicked the button, click again on "Show info" to verify that your data was saved:
+![](/img/aws/awsFuncaAlmacenado.png)
 
 Remember to enable the ports that you need to use for running the Aplication:
 
@@ -99,12 +112,8 @@ Remember to enable the ports that you need to use for running the Aplication:
 
 ## Local Running
 
-If you want to run the appweb on a local port, you migth install herokuCli and then use the comand below.
-
-```
-heroku local web
-```
-or for windows:
+If you want to run the appweb on a local port 
+you must use the comand below for windows:
 ```
 java  -cp target/classes;target/dependency/* edu.escuelaing.arep.heroku.app.SparkWebApp
 ```
