@@ -8,9 +8,9 @@ import java.io.IOException;
 public class RequestLog {
     // private final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    public String getData(){
+    public String getData(String subIp){
         Request request = new Request.Builder()
-                .url("http://localhost:4567/datastore")
+                .url("http://"+ subIp +":34000/datastore")
                 .get()
                 .build();
         OkHttpClient httpClient = new OkHttpClient();
@@ -18,6 +18,7 @@ public class RequestLog {
         try {
             Response response = httpClient.newCall(request).execute();
             temp = response.body().string();
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -25,10 +26,10 @@ public class RequestLog {
         return temp;
     }
 
-    public void senData(String data){
+    public void senData(String data,String subIp){
         RequestBody requestBody = RequestBody.create(null, data);
         Request request = new Request.Builder()
-                .url("http://localhost:4567/add")
+                .url("http://"+ subIp +":34000/add")
                 .post(requestBody)
                 .build();
         OkHttpClient httpClient = new OkHttpClient();

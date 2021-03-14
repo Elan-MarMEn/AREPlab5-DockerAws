@@ -19,6 +19,7 @@ app = (function () {
             contentType: "application/json"
         });
         promise.then(function(data){
+            console.log(data);
             var temp = JSON.parse(data)
             showData(temp.Dataset)
         }, function(error) {

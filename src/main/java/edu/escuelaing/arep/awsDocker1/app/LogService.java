@@ -22,7 +22,6 @@ public class LogService{
         get("/datastore", (req,res) -> mongoConnect.getAlldata());
 
         post("/add",(request, response) -> {
-//            System.out.println(request.body());
             mongoConnect.saveData(request.body());
             return true;
         });

@@ -1,22 +1,39 @@
 version: '2'
 
 services:
-  web:
-    build:
-        context: .
-        dockerfile: Dockerfile
-    container_name: appr_roundrobin
-    networks:
-        net:
-            ipv4_address: 102.24.0.6
-    ports:
-        - "34005:6000"
+    web:
+        image: elanmarmen/app_roundrobin
+        container_name: appr_roundrobin
+        networks:
+            dockerRed:
+                ipv4_address: 188.88.0.4
+        ports:
+            - "34005:6000"
+
+    logservice:
+        image: elanmarmen/log_service
+        container_name: logservice
+        networks:
+            dockerRed:
+                ipv4_address: 188.88.0.5
+    logservice2:
+        image: elanmarmen/log_service
+        container_name: logservice2
+        networks:
+            dockerRed:
+                ipv4_address: 188.88.0.6
+    logservice3:
+        image: elanmarmen/log_service
+        container_name: logservice3
+        networks:
+            dockerRed:
+                ipv4_address: 188.88.0.7
 networks:
-    net:
+    dockerRed:
         ipam:
             driver: default
             config:
-                - subnet: 102.24.0.0/16
+                - subnet: 188.88.0.0/16
 volumes:
     mongodb:
     mongodb_config:
