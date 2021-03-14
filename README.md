@@ -4,7 +4,7 @@ This project focuses on the mountage of a docker container that have 4 diferents
 
 ## Continuous Integration
 
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)]https://app.circleci.com/pipelines/github/Elan-MarMEn/AREPlab5-DockerAws)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/Elan-MarMEn/AREPlab5-DockerAws)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/13b1c8c14c5f469ca46d1f3e492fb825)](https://www.codacy.com/gh/Elan-MarMEn/AREPlab5-DockerAws/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Elan-MarMEn/AREPlab5-DockerAws&amp;utm_campaign=Badge_Grade)
 
