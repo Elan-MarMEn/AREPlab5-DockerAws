@@ -4,7 +4,7 @@ This project focuses on the mountage of a docker container that have 4 diferents
 
 ## Continuous Integration
 
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/Elan-MarMEn/AREPNanoSaprk)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)]https://app.circleci.com/pipelines/github/Elan-MarMEn/AREPlab5-DockerAws)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/13b1c8c14c5f469ca46d1f3e492fb825)](https://www.codacy.com/gh/Elan-MarMEn/AREPlab5-DockerAws/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Elan-MarMEn/AREPlab5-DockerAws&amp;utm_campaign=Badge_Grade)
 
@@ -86,7 +86,7 @@ Now you can put in the URI " http://localhost:34005/ " and you will see this:
 
 In this case the local image must be load in DockerHub and then you will pull them on 
 the virtual machine (Note: you should install docker and docker-compose on the AWS machine), you will see just two images:
-![](/img/aws/imagesAWs.png)
+> ![](/img/aws/imagesAWs.png)
  
 then with images you just have to create a new directory for create and store your docker-compose.yml
 (The docker-compose.yml could be the same of this repository you only have to change the name of the image). 
@@ -95,7 +95,7 @@ Now you have all tools just left to run the docker compose command:
 docker-compose up -d
 ```
 then verify the port of the containers and the succesfully creation:
-![](/img/aws/awsContainers.png)
+> ![](/img/aws/awsContainers.png)
 After this you can see on AWS web direction:
 * Normal view:
 ![](/img/aws/awsnormal.png)
